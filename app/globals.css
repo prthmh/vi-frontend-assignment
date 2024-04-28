@@ -77,35 +77,43 @@
 
 @layer utilities {
     .custom-stick-class {
-        @apply overflow-scroll;
+        @apply overflow-scroll border-spacing-0;
     }
 
     .custom-stick-class th:nth-child(1),
     .custom-stick-class td:nth-child(1) {
         position: sticky;
-        left: 0;
+        left: -4px;
         width: fit-content;
     }
     .custom-stick-class th:nth-child(2),
     .custom-stick-class td:nth-child(2) {
         position: sticky;
-        left: 35px;
+        left: 25px;
         width: fit-content;
     }
 
-    .custom-stick-class tr td {
+    /* .custom-stick-class tr td {
         @apply bg-white;
-    }
+    } */
     .custom-stick-class tr:hover {
         @apply bg-slate-200;
     }
 
-    .custom-stick-class tr:hover td {
+    /* .custom-stick-class tr:hover td {
         background-color: transparent;
+    } */
+
+    .custom-stick-class td:nth-child(1),
+    .custom-stick-class td:nth-child(2) {
+        @apply max-sm:bg-white max-md:bg-white;
     }
 
     .custom-stick-class td:nth-child(1):hover,
     .custom-stick-class td:nth-child(2):hover {
         background-color: transparent;
+    }
+    td {
+        @apply border border-gray-300;
     }
 }
