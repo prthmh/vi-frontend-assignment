@@ -74,3 +74,38 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .custom-stick-class {
+        @apply overflow-scroll;
+    }
+
+    .custom-stick-class th:nth-child(1),
+    .custom-stick-class td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        width: fit-content;
+    }
+    .custom-stick-class th:nth-child(2),
+    .custom-stick-class td:nth-child(2) {
+        position: sticky;
+        left: 35px;
+        width: fit-content;
+    }
+
+    .custom-stick-class tr td {
+        @apply bg-white;
+    }
+    .custom-stick-class tr:hover {
+        @apply bg-slate-200;
+    }
+
+    .custom-stick-class tr:hover td {
+        background-color: transparent;
+    }
+
+    .custom-stick-class td:nth-child(1):hover,
+    .custom-stick-class td:nth-child(2):hover {
+        background-color: transparent;
+    }
+}
