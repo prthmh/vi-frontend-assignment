@@ -1,5 +1,14 @@
 # Vidyayatan Infotech: Frontend Hiring Assignment
 
+This is an assignment for Vidyayatan Infotech. I have completed all the 3 tasks for the assignment.
+
+-   [x] **Add a new checkbox column**
+-   [x] **Sticky Columns**
+-   [x] **Resizable Columns**
+
+### [Live Link](https://vi-frontend-assignment-prathmesh.vercel.app/)
+### [Demo Video](https://youtu.be/3au9KpKFo_M)
+
 ## How to submit the Assignment : [LINK](https://docs.google.com/forms/d/e/1FAIpQLSd-2gS4piDlG4IvAhW-e0494Z4oNiw04xoiTFZ9VOxf-QtVKQ/viewform)
 
 -   Fork this repository
@@ -27,9 +36,9 @@
 
 ### 1. **Add a new checkbox column**
 
--   [ ] Create a new checkbox column as the first column
--   [ ] On checking the column the selected row should be highlighted i.e background should change
--   [ ] Only a single column can be selected at a time across pages
+-   [x] Create a new checkbox column as the first column
+-   [x] On checking the column the selected row should be highlighted i.e background should change
+-   [x] Only a single column can be selected at a time across pages
 
 **Examples:**
 
@@ -40,15 +49,15 @@ First column is a checkbox, on selecting the row notice the background of the se
 
 ### 2. **Sticky Columns**
 
--   [ ] Create the first 2 columns as sticky columns
--   [ ] On hovering over the row the entire row's background should be highlighted including the sticky columns
--   [ ] To test this change either use mobile view or decrease the width of the table
+-   [x] Create the first 2 columns as sticky columns
+-   [x] On hovering over the row the entire row's background should be highlighted including the sticky columns
+-   [x] To test this change either use mobile view or decrease the width of the table
 
 ![Sticky columns](./.github/demo-images/task2_1.gif)
 
 ### 3. **Resizable Columns**
 
--   [ ] Create resizable columns, i.e. the width of columns should increase or decrease depending on user interaction
--   [ ] If the content is too big to fit in a column, the content should not overflow out of the column i.e. overflow-hidden should be enforced
+-   [x] Create resizable columns, i.e. the width of columns should increase or decrease depending on user interaction
+-   [x] If the content is too big to fit in a column, the content should not overflow out of the column i.e. overflow-hidden should be enforced
 
 ![Resizable columns](./.github/demo-images/task3_1.gif)

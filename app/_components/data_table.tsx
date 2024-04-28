@@ -16,7 +16,7 @@ import {
     useReactTable,
 } from "@tanstack/react-table";
 import { DataTablePagination } from "./data-table-pagination";
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
@@ -41,12 +41,9 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
 
         do {
             let parent = tdElement.parentNode;
-            console.log("parent", parent);
             tdElement = parent;
         } while (tdElement.tagName.toLowerCase() !== "td");
-        console.log(tdElement);
         columnWidthRef.current = tdElement;
-        // tdElement.style.width = "20px";
     };
 
     const increaseWidth = () => {
@@ -68,7 +65,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     const selectRow = (rowId: string) => {
         setCheckedRow(rowId);
     };
-    console.log(checkedRow);
+
     return (
         <div className="space-y-4">
             <div className=" flex gap-3 text-white items-center">
