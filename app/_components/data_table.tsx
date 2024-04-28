@@ -16,6 +16,8 @@ import {
     useReactTable,
 } from "@tanstack/react-table";
 import { DataTablePagination } from "./data-table-pagination";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -33,13 +35,22 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     // TASK : Make first 2 columns (i.e. checkbox and task id) sticky
     // TASK : Make header columns resizable
 
+    const [checkedRow, setCheckedRow] = useState<string>();
+    const selectRow = (rowId: string) => {
+        setCheckedRow(rowId);
+    };
+    console.log("rows", table.getRowModel().rows);
+    console.log("selected rows", checkedRow);
     return (
         <div className="space-y-4">
             <div className="rounded-md border">
                 <Table>
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow key={headerGroup.id}>
+                            <TableRow key={headerGroup.id} className="">
+                                <TableHead>
+                                    <input type="checkbox" />
+                                </TableHead>
                                 {headerGroup.headers.map((header) => {
                                     return (
                                         <TableHead key={header.id} colSpan={header.colSpan}>
@@ -61,7 +72,19 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                                 <TableRow
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}
+                                    className={cn({
+                                        "bg-slate-300": checkedRow === row.id,
+                                    })}
                                 >
+                                    {/* Checkbox */}
+                                    <TableCell>
+                                        <input
+                                            type="checkbox"
+                                            checked={checkedRow === row.id}
+                                            onChange={() => selectRow(row.id)}
+                                        />
+                                    </TableCell>
+
                                     {row.getVisibleCells().map((cell) => (
                                         <TableCell key={cell.id}>
                                             {flexRender(
